@@ -1,14 +1,13 @@
 <script lang="ts">
 	let { checked = $bindable(false) } = $props();
 	let menuEl: HTMLElement | undefined;
-	let menuRect = menuEl?.getBoundingClientRect();
 </script>
 
 <div
 	bind:this={menuEl}
 	data-open={checked ? 'open' : 'close'}
 	class={[
-		'menu fixed top-0 left-0 isolate z-50 grid h-svh w-[75vw] place-items-center bg-slate-900 transition-all duration-500 lg:w-[35vw]'
+		'menu fixed top-0 left-0 isolate z-50 flex h-svh w-[75vw] items-center justify-center bg-slate-900  lg:w-[35vw]'
 	]}
 >
 	<nav class="relative z-20">
@@ -30,23 +29,28 @@
 
 <style>
 	.menu {
-		will-change: opacity, translate;
+		will-change: opacity, transform;
 		transition-behavior: allow-discrete;
+		transform: translateZ(0);
+		transition:
+			transform 500ms,
+			opacity 500ms;
+
 		&[data-open='open'] {
-			visibility: visible;
+			transform: translateX(0);
 		}
 		&[data-open='close'] {
-			visibility: hidden;
-			translate: -100% 0;
+			transform: translateX(-100%);
 			opacity: 0;
 			pointer-events: none;
 		}
 	}
 
 	.overlay {
+		will-change: opacity;
 		transition: opacity 500ms;
-		backdrop-filter: blur(1px);
-		backdrop-filter: brightness(60%);
+		visibility: visible;
+		background-color: rgba(0, 0, 0, 0.4);
 		opacity: 1;
 		transition-behavior: allow-discrete;
 		&[data-open='close'] {
