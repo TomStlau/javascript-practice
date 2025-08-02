@@ -1,0 +1,53 @@
+@layer components {
+	.btn {
+		&:link,
+		&:visited {
+			--transition-duration: 200ms;
+			position: relative;
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: 15px 40px;
+			display: inline-block;
+			transition:
+				transform var(--transition-duration),
+				box-shadow var(--transition-duration);
+			border-radius: 999px;
+			box-shadow: var(--shadow-md);
+		}
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: var(--shadow-md/30);
+		}
+
+		&:active {
+			transform: translateY(0);
+			box-shadow: var(--shadow-md);
+		}
+	}
+	.btn-white {
+		background-color: oklch(1 0 0);
+		color: oklch(0.4 0 0);
+	}
+
+	.btn-pulsing {
+		&::after {
+			content: '';
+			opacity: 1;
+			position: absolute;
+			border-radius: 999px;
+			background-color: inherit;
+			inset: 0;
+			pointer-events: none;
+			z-index: -1;
+			transform: scale(1);
+		}
+		&:hover::after {
+			--after-duration: 800ms;
+			transform: scale(1.8);
+			opacity: 0;
+			transition:
+				transform var(--after-duration),
+				opacity var(--after-duration);
+		}
+	}
+}

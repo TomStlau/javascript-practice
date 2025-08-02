@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource-variable/josefin-sans';
+
+@import '@fontsource-variable/nunito';
+/* @import './routes/css/natours/natours.css'; */
+@import './utilities.css';
+
+* {
+	scroll-behavior: smooth;
+}
+body {
+	/* font-family: 'Lato', sans-serif; */
+	margin: 0;
+
+	@apply text-dark-gray;
+}
+
+:root {
+	--onload-duration: 800ms;
+}
+
+@custom-variant big {
+	--font-size: 2.5rem;
+	--line-height: 1.2;
+}
+
+@theme {
+	--text-2xs: 0.675rem;
+	--color-light-main: var(--light-main);
+	--color-medium-main: var(--medium-main);
+	--color-dark-main: var(--dark-main);
+	--color-dark-gray: var(--dark-gray);
+
+	/* Trillo */
+
+	--color-trillo-primary: #eb2f64;
+	--color-trillo-primary-light: #ff3366;
+	--color-trillo-primary-dark: #ba265d;
+
+	--color-trillo-grey-light-1: #faf9f9;
+	--color-trillo-grey-light-2: #f4f2f2;
+	--color-trillo-grey-light-3: #f0eeee;
+	--color-trillo-grey-light-4: #ccc;
+	--color-trillo-grey-dark-1: #333;
+	--color-trillo-grey-dark-2: #777;
+	--color-trillo-grey-dark-3: #999;
+	--drop-shadow-trillo-dark: var(--drop-shadow-2xl);
+
+	/* Animate for natours */
+	--animate-from-left: slide-in-from-left var(--onload-duration) backwards ease-in-out;
+	--animate-from-right: slide-in-from-right var(--onload-duration) backwards ease-in-out;
+	--animate-from-bottom: slide-in-from-bottom var(--onload-duration) backwards ease-in-out;
+	--animate-pulse-scale: pulse-scale 1.5s infinite;
+
+	/* Nexter */
+
+	--font-josefin: 'Josefin Sans Variable', sans-serif;
+	--font-primary: 'Nunito Variable', sans-serif;
+	--color-nexter-primary: oklch(from #c69963 l calc(c + 0.08) h);
+	--color-nexter-primary-dark: oklch(from #b28451 l calc(c + 0.08) h);
+	--color-nexter-secondary: #101d3c;
+	--color-nexter-grey-light-1: #f9f7f6;
+	--color-nexter-grey-light-2: #aaa;
+	--color-nexter-grey-dark-1: #54483a;
+	--color-nexter-grey-dark-2: #6d5d4b;
+}
+
+/* keyframes */
+
+@keyframes slide-in-from-left {
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	80% {
+		transform: translateX(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes slide-in-from-right {
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	80% {
+		transform: translateX(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes slide-in-from-bottom {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	80% {
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse-scale {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

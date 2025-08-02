@@ -1,0 +1,13 @@
+@import '@fontsource-variable/open-sans';
+
+.trillo-main {
+	font-family: 'Open Sans Variable', sans-serif;
+	padding: 50px 0;
+	background-image: linear-gradient(
+		to right bottom,
+		var(--color-trillo-primary-light),
+		var(--color-trillo-primary-dark)
+	);
+	background-repeat: no-repeat;
+	min-height: 100svh;
+}

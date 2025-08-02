@@ -1,0 +1,21 @@
+@import '@fontsource/lato';
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+:root {
+	--light-main: #1dee20;
+	--medium-main: #55c57a;
+	--dark-main: #28b485;
+	--dark-gray: #666;
+	--color-secondary-light: oklch(78.7% 0.199 60.84);
+	--color-secondary-dark: oklch(69.94% 0.19 59.53);
+	--color-tertiary-light: #2998ff;
+	--color-tertiary-dark: #5643fa;
+}
