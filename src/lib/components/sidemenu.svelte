@@ -44,9 +44,7 @@
 	}
 
 	.overlay {
-		transition:
-			opacity 500ms,
-			visibility 500ms;
+		transition: opacity 500ms;
 		backdrop-filter: blur(1px);
 		backdrop-filter: brightness(60%);
 		opacity: 1;
